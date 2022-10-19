@@ -9,16 +9,19 @@ const corsOptions = {
   origin: "http://localhost:3000",
 };
 
-app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 const router = require("express").Router();
 
 
 const artistRouter = require("./routes/artist.routes")(router);
 const genreRouter = require("./routes/genre.routes")(router);
 const movieRouter = require("./routes/movie.routes")(router);
+const userRouter = require("./routes/user.routes")(router);
 
 
 app.use("/api", movieRouter, genreRouter, artistRouter);
+app.use("/auth", userRouter);
 
 
 app.get("/", (req, res) => {

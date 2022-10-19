@@ -3,7 +3,7 @@ const app = express();
 
 
 const db = require("./models");
-const PORT = 3000;
+const PORT = 8085;
 const cors = require("cors");
 const corsOptions = {
   origin: "http://localhost:3000",

@@ -26,7 +26,7 @@ app.use("/auth", userRouter);
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Welcome to Upgrad Movie booking application development.",
+    message: "Welcome to UpGrad Movie booking application development.",
   });
 });
 
